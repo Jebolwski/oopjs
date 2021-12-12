@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p></p>
+
+    <script>
+        class Properties {
+            constructor(speed, tire) {
+                this.speed = speed;
+                this.tire = tire;
+            }
+        }
+
+        class Car extends Properties {
+            constructor(acc, speed, tire) {
+                super(speed, tire)
+                this.acc = acc;
+            }
+
+            getCarsRate() {
+                if (this.speed * this.acc + this.tire > 600) {
+                    return "Good / " + "Speed:" + this.speed + " Tire:" + this.tire + " Acceleration:" + this.acc
+                } else if (this.speed * this.acc + this.tire > 400) {
+                    return "Average / " + "Speed:" + this.speed + " Tire:" + this.tire + " Acceleration:" + this.acc
+                } else if (this.speed * this.acc + this.tire > 200) {
+                    return "Bad / " + "Speed:" + this.speed + " Tire:" + this.tire + " Acceleration:" + this.acc
+                }
+            }
+        }
+
+        var hyundai = new Car(20, 20, 43)
+
+        var p = document.querySelector("p");
+        p.innerHTML = hyundai.getCarsRate();
+    </script>
+</body>
+
+</html>
+
+</html>
